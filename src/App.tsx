@@ -1,5 +1,7 @@
 import * as React from 'react';
+// import { render } from 'react-dom'; // new
 import './App.css';
+import AvatarComponent from './components/AvatarComponent'; // and new
 import FormComponent from "./components/FormComponent";
 import TitleComponent from "./components/TitleComponent";
 import WeatherComponent from "./components/WeatherComponent";
@@ -54,6 +56,7 @@ export default class App extends React.Component<any, any> {
       <div>
         <div className="title-container">
           <TitleComponent />
+          for <AvatarComponent/>
         </div>
         <div className="form-container">
           <FormComponent getWeather={this.getWeather}/>

@@ -1,39 +1,36 @@
 import Avatar from '@material-ui/core/Avatar';
+import deepPurple from '@material-ui/core/colors/deepPurple';
 import { withStyles } from '@material-ui/core/styles';
-import classNames from 'classnames';
 import * as PropTypes from 'prop-types'
 import * as React from 'react';
 
-const styles = {
-    avatar: {
-        margin: 10,
-    },
-    bigAvatar: {
-        height: 60,
-        width: 60,
-    },
-    row: {
-        display: 'flex',
-        justifyContent: 'center',
-    },
-};
-
-function ImageAvatars(props: any) {
-  const { classes } = props;
-  return (
-    <div className={classes.row}>
-      <Avatar alt="Remy Sharp" src="/static/images/remy.jpg" className={classes.avatar} />
-      <Avatar
-        alt="Adelle Charles"
-        src="/static/images/uxceo-128.jpg"
-        className={classNames(classes.avatar, classes.bigAvatar)}
-      />
-    </div>
-  );
+interface IProps {
+  classes: any
 }
 
-ImageAvatars.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+const styles = {
+    avatar: {
+      margin: 10,
+    },
+    purpleAvatar: {
+      backgroundColor: deepPurple[500],
+      color: '#fff',
+      margin: 10,
+    },
+    row: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+  };
 
-export default withStyles(styles)(ImageAvatars);
+const LetterAvatars: React.StatelessComponent<IProps> = ({ classes }) => (
+    <div className={classes.row}>
+      <Avatar className={classes.purpleAvatar}>MSA</Avatar>
+    </div>
+);
+
+LetterAvatars.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+  
+  export default withStyles(styles)(LetterAvatars);
